@@ -1,0 +1,21 @@
+{
+	"landingPage": "/wp-admin/post.php?post=4&action=edit",
+	"steps": [
+		{
+			"step": "runPHP",
+			"code": "<?php include 'wordpress/wp-load.php'; wp_insert_post(array( 'post_title' => 'Test the Lorem Ipsum Autocompleter', 'post_content' => '<!-- wp:paragraph --><p>Type the word <em>lorem</em> to open the autocomplete menu!</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Typing lorem in a heading block shows options specific to a heading</h2><!-- /wp:heading -->', 'post_status' => 'publish', 'post_author' => 1 )); "
+		},
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		},
+		{
+			"step": "installPlugin",
+			"pluginZipFile": {
+				"resource": "wordpress.org/plugins",
+				"slug": "loremipsum"
+			}
+		}
+	]
+}
